@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap');
+html{background: black;}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    color: white;
+}
+.logo{
+    width: 40px;
+}
+.menu-item{
+    font-family: "JetBrains Mono", monospace;
+    text-decoration: none;
+    color: white;
+    margin: 40px;
+}

@@ -1,0 +1,11 @@
+.line {
+    position: absolute;
+    width: 2px; /* Vonal vastagsága */
+    height: 100vh; /* Teljes képernyő magasság */
+    background: white;
+    left: 30%;
+    top: 0; /* A tetején kezdődjön */
+    transform: rotate(170deg) translateY(-30%);
+    transform-origin: top center; /* A vonal a felső középpontból induljon */
+}
+
