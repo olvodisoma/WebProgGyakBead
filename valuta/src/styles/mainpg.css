@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap');
+
+h1{
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+    font-size:50px;
+    font-size: 100px;
+}
+h2{
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+    width: 560px;
+    font-size: 30px;
+}
+section{
+margin: auto;
+margin-left: 200px;
+margin-right: 200px;
+
+display: flex;
+height:80dvh;
+width: 80dvw;
+}
+.leftdiv{
+    width: 50%; /* Mindkét div 50%-ot foglal el */
+    margin-top: 10%;
+    align-items: center;
+    justify-content: center; 
+}
+.rightdiv{
+    width: 50%; /* Mindkét div 50%-ot foglal el */
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
