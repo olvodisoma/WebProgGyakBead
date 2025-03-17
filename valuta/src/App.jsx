@@ -1,8 +1,9 @@
 import React, { useRef} from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import Navbar from "./navbar"
-import Mainpg from "./mainpg"
+import Navbar from "./navbar";
+import Mainpg from "./mainpg";
+import CurrencyExchange from "./CurrencyExchange";
 import "./styles/App.css";
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
    <div ref={lineRef} className="line"></div>
    <Navbar></Navbar>
    <Mainpg></Mainpg>
+    <CurrencyExchange></CurrencyExchange>
   </>
   )
 }
