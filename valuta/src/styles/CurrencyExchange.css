@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap');
+
+.extdiv{
+    width: 80vw;
+    margin: auto;
+    margin-top: 100px;
+}
+
+  .extabble .rdt_Table {
+    background-color:black;
+    color: #333;
+  }
+  
+  .extabble .rdt_TableHead {
+    background-color: black;
+    color: black;
+    font-weight: bold;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 30px;
+  }
+  
+  .extabble .rdt_TableRow {
+    transition: background 0.3s;
+    background: #000;
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 30px;
+  }
+  
+.extabble .rdt_TableRow:hover {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+nav.rdt_Pagination {
+    background-color: black ; /* Kék háttér */
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 20px;
+  
+  }
+/* Pagination gombok */
+nav.rdt_Pagination .sc-lertIE {
+    background-color: white ;
+    color: white !important ;
+    border: none !important;
+    padding: 6px 12px !important;
+    border-radius: 1px !important;
+    margin: 0 5px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+  }
+  /* Hover effekt */
+  nav.rdt_Pagination .sc-lertIE:hover {
+    background-color: gray !important;
+    color: white !important;
+  }
+  
+  /* Inaktív gombok (disabled) */
+  nav.rdt_Pagination .sc-lertIE:disabled {
+    background-color: white !important;
+    
+    cursor: not-allowed !important;
+  }
