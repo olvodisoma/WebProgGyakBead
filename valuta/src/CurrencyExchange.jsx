@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DataTable from "react-data-table-component";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/CurrencyExchange.css";
 
 const columns = [
   { name: "Number", selector: (row) => row.number, sortable: true },
@@ -25,12 +25,10 @@ const data = [
 ];
 
 export const CurrencyExchange = () => {
+  
   return (
-    <div className="container mt-4">
-      <div className="text-center text-success mb-3">
-        <h3>Bootstrap</h3>
-      </div>
-      <DataTable columns={columns} data={data} pagination striped />
+    <div className="extdiv" >
+      <DataTable className="extabble" columns={columns} data={data} pagination striped />
     </div>
   );
 };
