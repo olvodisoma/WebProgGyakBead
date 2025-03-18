@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import Navbar from "./navbar";
 import Mainpg from "./mainpg";
+import Gyik from "./gyik";
 import CurrencyExchange from "./CurrencyExchange";
 import "./styles/App.css";
 function App() {
@@ -27,7 +28,8 @@ function App() {
    <div ref={lineRef} className="line"></div>
    <Navbar></Navbar>
    <Mainpg></Mainpg>
-    <CurrencyExchange></CurrencyExchange>
+   <CurrencyExchange></CurrencyExchange>
+   <Gyik></Gyik>
   </>
   )
 }
