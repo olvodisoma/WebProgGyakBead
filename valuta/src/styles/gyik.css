@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap');
+
+
+/* Konténer stílusok */
+
+.faq-container {
+   margin-top: 100px;
+  }
+  
+  /* Cím */
+  .faq-title {
+    background: white;
+    color:  black;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 130px;
+    height: 20vh;
+    width: 80vw;
+    margin: auto;
+  
+
+   
+  }
+  
+  /* Egyetlen GYIK elem */
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    width: 80vw;
+    margin: auto;
+    font-family: "JetBrains Mono", monospace;
+  }
+  
+  /* Kérdés gomb */
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    font-family: "JetBrains Mono", monospace;
+    padding: 12px 16px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7f7f7;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .faq-question:hover {
+    background: #eaeaea;
+  }
+  
+  /* Nyíl ikon */
+  .faq-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-icon.open {
+    transform: rotate(180deg);
+  }
+  
+  /* Válasz (alapból rejtve) */
+  .faq-answer {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    padding: 0 16px;
+    font-size: 16px;
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .faq-answer p {
+    padding: 10px 0;
+  }
+  
