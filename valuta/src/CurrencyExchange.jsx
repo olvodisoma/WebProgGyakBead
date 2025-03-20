@@ -4,6 +4,7 @@ import "./styles/CurrencyExchange.css";
 
 
 
+
 const columns = [
   { name: "Pénznem", selector: (row) => row.currencyName, sortable: true },
   { name: "Ország", selector: (row) => row.country, sortable: true },
@@ -18,6 +19,10 @@ const columns = [
 
 export const CurrencyExchange = () => {
 
+  var date = "2001-02-16";
+
+
+  //#region valuta változók
   const [joUSD, joUSDFgv] = useState(null);
   const [joEUR, joEURFgv] = useState(null);
   const [joCNY, joCNYFgv] = useState(null);
@@ -46,6 +51,35 @@ export const CurrencyExchange = () => {
   const [joEGP, joEGPFgv] = useState(null);
   const [joTHB, joTHBFgv] = useState(null);
 
+
+  const [ystrdayUSD, ystrdayUSDFgv] = useState(null);
+  const [ystrdayEUR, ystrdayEURFgv] = useState(null);
+  const [ystrdayCNY, ystrdayCNYFgv] = useState(null);
+  const [ystrdayJPY, ystrdayJPYFgv] = useState(null);
+  const [ystrdayGBP,        ystrdayGBPFgv] = useState(null);
+  const [ystrdayINR,         ystrdayINRFgv] = useState(null);
+  const [ystrdayCHF,         ystrdayCHFFgv] = useState(null);
+  const [ystrdayCAD,         ystrdayCADFgv] = useState(null);
+  const [ystrdayAUD,         ystrdayAUDFgv] = useState(null);
+  const [ystrdayKRW,         ystrdayKRWFgv] = useState(null);
+  const [ystrdayRUB,         ystrdayRUBFgv] = useState(null);
+  const [ystrdayBRL,         ystrdayBRLFgv] = useState(null);
+  const [ystrdayMXN,         ystrdayMXNFgv] = useState(null);
+  const [ystrdayZAR,         ystrdayZARFgv] = useState(null);
+  const [ystrdayTRY, ystrdayTRYFgv] = useState(null);
+  const [ystrdaySEK, ystrdaySEKFgv] = useState(null);
+  const [ystrdayNOK, ystrdayNOKFgv] = useState(null);
+  const [ystrdaySGD, ystrdaySGDFgv] = useState(null);
+  const [ystrdayDKK, ystrdayDKKFgv] = useState(null);
+  const [ystrdayPLN, ystrdayPLNFgv] = useState(null);
+  const [ystrdayCZK, ystrdayCZKFgv] = useState(null);
+  const [ystrdaySAR, ystrdaySARFgv] = useState(null);
+  const [ystrdayARS, ystrdayARSFgv] = useState(null);
+  const [ystrdayIDR, ystrdayIDRFgv] = useState(null);
+  const [ystrdayPHP, ystrdayPHPFgv] = useState(null);
+  const [ystrdayEGP, ystrdayEGPFgv] = useState(null);
+  const [ystrdayTHB, ystrdayTHBFgv] = useState(null);  
+  //#endregion
 
   const API_KEY = "2d1d0a37c3304cc394b991f88f9fb253";
 
@@ -96,9 +130,57 @@ export const CurrencyExchange = () => {
     fetchExchangeRate();
   }, []);
 
+  useEffect(() => {
+    const fetchHistoricalExchangeRate = async () => {
+      try {
+        const response = await fetch(
+          `https://openexchangerates.org/api/historical/` + date + `.json?app_id=${API_KEY}`
+        );
+
+        const data = await response.json();
+
+        const huf = data.rates["HUF"];
+
+        ystrdayUSDFgv(huf / data.rates["USD"]);
+        ystrdayEURFgv(huf / data.rates["EUR"]);
+        ystrdayCNYFgv(huf / data.rates["CNY"]);
+        ystrdayJPYFgv(huf / data.rates["JPY"]);
+        ystrdayGBPFgv(huf / data.rates["GBP"]);
+        ystrdayINRFgv(huf / data.rates["INR"]);
+        ystrdayCHFFgv(huf / data.rates["CHF"]);
+        ystrdayCADFgv(huf / data.rates["CAD"]);
+        ystrdayAUDFgv(huf / data.rates["AUD"]);
+        ystrdayKRWFgv(huf / data.rates["KRW"]);
+        ystrdayRUBFgv(huf / data.rates["RUB"]);
+        ystrdayBRLFgv(huf / data.rates["BRL"]);
+        ystrdayMXNFgv(huf / data.rates["MXN"]);
+        ystrdayZARFgv(huf / data.rates["ZAR"]);
+        ystrdayTRYFgv(huf / data.rates["TRY"]);
+        ystrdaySEKFgv(huf / data.rates["SEK"]);
+        ystrdayNOKFgv(huf / data.rates["NOK"]);
+        ystrdaySGDFgv(huf / data.rates["SGD"]);
+        ystrdayDKKFgv(huf / data.rates["DKK"]);
+        ystrdayPLNFgv(huf / data.rates["PLN"]);
+        ystrdayCZKFgv(huf / data.rates["CZK"]);
+        ystrdaySARFgv(huf / data.rates["SAR"]);
+        ystrdayARSFgv(huf / data.rates["ARS"]);
+        ystrdayIDRFgv(huf / data.rates["IDR"]);
+        ystrdayPHPFgv(huf / data.rates["PHP"]);
+        ystrdayEGPFgv(huf / data.rates["EGP"]);
+        ystrdayTHBFgv(huf / data.rates["THB"]);
+        
+
+      } catch (error) {
+        console.error("Hiba történt az API lekérésekor:", error);
+      }
+    };
+
+    fetchHistoricalExchangeRate();
+  }, []);
+
   const data = [
     { currencyName: "Amerikai dollár (USD)", country: "Amerikai Egyesült Államok", exchangeRate: Math.round(joUSD * 100) / 100 + " Ft" },
-    { currencyName: "Euró (EUR)", country: "Európai Unió", exchangeRate: Math.round(joEUR * 100) / 100 + " Ft" },
+    { currencyName: "Euró (EUR)", country: "Európai Unió", exchangeRate: Math.round(joEUR * 100) / 100 + " Ft ➕➖✖" },
     { currencyName: "Kínai jüan (CNY)", country: "Kína", exchangeRate: Math.round(joCNY * 100) / 100 + " Ft" },
     { currencyName: "Japán jen (JPY)", country: "Japán", exchangeRate: Math.round(joJPY * 100) / 100 + " Ft" },
     { currencyName: "Brit font (GBP)", country: "Egyesült Királyság", exchangeRate: Math.round(joGBP * 100) / 100 + " Ft" },
