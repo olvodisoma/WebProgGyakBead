@@ -5,7 +5,10 @@ import Navbar from "./navbar";
 import Mainpg from "./mainpg";
 import Gyik from "./gyik";
 import CurrencyExchange from "./CurrencyExchange";
+import CurrencyConverter from "./Curencycalculator";
 import "./styles/App.css";
+import Contact from "./Contact";
+import AnimatedTexts from "./Animatedtext";
 function App() {
 
   const lineRef = useRef(null);
@@ -28,7 +31,10 @@ function App() {
    <div ref={lineRef} className="line"></div>
    <Navbar></Navbar>
    <Mainpg></Mainpg>
+   <AnimatedTexts></AnimatedTexts>
    <CurrencyExchange></CurrencyExchange>
+   <Contact></Contact>
+   <CurrencyConverter></CurrencyConverter>
    <Gyik></Gyik>
   </>
   )
