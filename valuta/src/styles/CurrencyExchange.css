@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap');
-
+.currencydiv h2{
+  width: 80vw;
+  margin: auto;
+  margin-top: 100px;
+  font-size: 60px;
+}
 .extdiv{
     width: 80vw;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
   .extabble .rdt_Table {

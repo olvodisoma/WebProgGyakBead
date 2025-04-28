@@ -7,7 +7,7 @@ import Main3d from "./main3d.jsx";
 
 function Mainpg() {
     const textRef = useRef(null);
-    const texts = ["Gyors és egyszerű használat", "Valós idejű árfolyamok", "Pontos valuta összehasonlítás"];
+    const texts = ["Gyors használat", "Valós idejű árfolyamok", "Pontos valuta összehasonlítás"];
     const [textIndex, setTextIndex] = useState(0);
     
     useEffect(() => {

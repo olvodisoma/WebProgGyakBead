@@ -318,8 +318,11 @@ if (joKRW > ystrdayKRW) {
 ];
 
   return (
+    <div className="currencydiv">
+      <h2>Élő átváltási árfolyamok</h2>
     <div className="extdiv" >
       <DataTable className="extabble" columns={columns} data={data} pagination striped />
+    </div>
     </div>
   );
 };

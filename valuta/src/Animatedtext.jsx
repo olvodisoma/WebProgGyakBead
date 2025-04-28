@@ -49,6 +49,12 @@ const AnimatedTexts = () => {
   ];
 
   return (
+    <div className="big-container">
+      <h2>Hogyan működik a Valutaváltónk?</h2>
+<p>A mi Valutaváltó alkalmazásunkkal egyszerűen kiszámolhatod, hogy egy adott összeg más pénznemekben mennyit érne, a valós piaci középárfolyam alapján.</p>
+<p>Csak add meg az átváltani kívánt összeget, válaszd ki a forrás- és célvalutát, és az alkalmazásunk az aktuális piaci árfolyam alapján azonnal kiszámolja az átváltott összeget.</p> 
+<p>Fontos tudni, hogy ez az átváltás csak tájékoztató jellegű számítás – az alkalmazás nem végez pénzügyi tranzakciókat vagy utalásokat.</p>  
+  <h2>Hogyan használjam a Valutaváltót?</h2>
     <div ref={containerRef} className="cards-container">
       {cards.map((card, idx) => (
         <div
@@ -62,6 +68,7 @@ const AnimatedTexts = () => {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

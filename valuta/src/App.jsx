@@ -9,6 +9,7 @@ import CurrencyConverter from "./Curencycalculator";
 import "./styles/App.css";
 import Contact from "./Contact";
 import AnimatedTexts from "./Animatedtext";
+import ComingSoon from "./ComingSoon";
 function App() {
 
   const lineRef = useRef(null);
@@ -31,10 +32,12 @@ function App() {
    <div ref={lineRef} className="line"></div>
    <Navbar></Navbar>
    <Mainpg></Mainpg>
+   <CurrencyConverter></CurrencyConverter>
    <AnimatedTexts></AnimatedTexts>
    <CurrencyExchange></CurrencyExchange>
+   <ComingSoon></ComingSoon>
    <Contact></Contact>
-   <CurrencyConverter></CurrencyConverter>
+
    <Gyik></Gyik>
   </>
   )

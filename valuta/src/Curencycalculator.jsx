@@ -1,69 +1,82 @@
-import React, { useState } from 'react';
-import './styles/Currencycalculator.css';
+import React, { useState, useEffect } from "react";
+import "./styles/CurrencyCalculator.css";
 
-function CurrencyConverter() {
-  const [amount, setAmount] = useState('');
-  const [from, setFrom] = useState('HUF');
-  const [to, setTo] = useState('EUR');
-  const [result, setResult] = useState('');
+const CurrencyCalculator = () => {
+  const [amount, setAmount] = useState(1);
+  const [fromCurrency, setFromCurrency] = useState("HUF");
+  const [toCurrency, setToCurrency] = useState("EUR");
+  const [rates, setRates] = useState({});
+  const API_KEY = "2d1d0a37c3304cc394b991f88f9fb253";
 
-  const convert = async () => {
-    if (!amount) {
-      setResult('Írj be egy összeget.');
-      return;
+  useEffect(() => {
+    fetch(`https://openexchangerates.org/api/latest.json?app_id=${API_KEY}`)
+      .then((res) => res.json())
+      .then((data) => setRates(data.rates))
+      .catch((error) => console.error("API error:", error));
+  }, []);
+
+  const convertCurrency = () => {
+    if (!rates[fromCurrency] || !rates[toCurrency]) {
+      return 0;
     }
-
-    try {
-      const res = await fetch(`https://api.exchangerate.host/convert?from=${from}&to=${to}&amount=${amount}`);
-      const data = await res.json();
-      if (data.result) {
-        setResult(`${amount} ${from} = ${data.result.toFixed(2)} ${to}`);
-      } else {
-        setResult('Nem sikerült lekérni az árfolyamot.');
-      }
-    } catch (err) {
-      setResult('Hálózati hiba.');
-    }
+    const rate = rates[toCurrency] / rates[fromCurrency];
+    return (amount * rate).toFixed(5);
   };
 
   return (
-    <div className="converter-container">
-      <div className="calculator">
-        <h1>Valuta Kalkulátor</h1>
-        <label>Összeg:</label>
-        <input
-          type="number"
-          value={amount}
-          onChange={e => setAmount(e.target.value)}
-          placeholder="Pl. 1000"
-        />
 
-        <label>Honnan:</label>
-        <select value={from} onChange={e => setFrom(e.target.value)}>
-          <option value="HUF">HUF</option>
-          <option value="EUR">EUR</option>
-          <option value="USD">USD</option>
-        </select>
+    <div className="calculator-background">
+      <div className="calculator-card">
+        <div className="input-section">
+          <label>Összeg</label>
+          <div className="input-with-currency">
+            <input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+            />
+            <select
+              value={fromCurrency}
+              onChange={(e) => setFromCurrency(e.target.value)}
+            >
+              {Object.keys(rates).map((currency) => (
+                <option key={currency} value={currency}>
+                  {currency}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-        <label>Hova:</label>
-        <select value={to} onChange={e => setTo(e.target.value)}>
-          <option value="EUR">EUR</option>
-          <option value="USD">USD</option>
-          <option value="HUF">HUF</option>
-        </select>
+        <div className="input-section">
+          <label>Átváltva erre</label>
+          <div className="input-with-currency">
+            <input
+              type="text"
+              value={convertCurrency()}
+              readOnly
+            />
+            <select
+              value={toCurrency}
+              onChange={(e) => setToCurrency(e.target.value)}
+            >
+              {Object.keys(rates).map((currency) => (
+                <option key={currency} value={currency}>
+                  {currency}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-        <button onClick={convert}>Átváltás</button>
-        <div className="result">{result}</div>
-      </div>
-
-      <div className="smoke">
-        <video autoPlay loop muted>
-          <source src="/optillusion.mp4" type="video/mp4" />
-          A böngésződ nem támogatja a videót.
-        </video>
+        <div className="result-info">
+          1 {fromCurrency} = {rates[toCurrency] && rates[fromCurrency] 
+            ? (rates[toCurrency] / rates[fromCurrency]).toFixed(5)
+            : "0.00000"} {toCurrency}
+        </div>
       </div>
     </div>
   );
-}
+};
 
-export default CurrencyConverter;
+export default CurrencyCalculator;

@@ -1,65 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap');
+.calculator-background {
+  background-color: #000000; /* fekete oldal háttér */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.calculator-card {
+  margin-top: 150px;
+  background-image: url("./abstractcomp.jpg");
+  padding: 2rem;
+  width: 80vw;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.input-section {
+  margin-bottom: 1.5rem;
+}
+
+.input-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.input-with-currency {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.input-with-currency input {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+}
+
+.input-with-currency select {
+  padding: 1rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.swap-button {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.result-info {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: white;
+}
+
+.button-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
 
 
-.converter-container {
-    margin: auto;
-    display: flex;
-    width: 80vw;
-    font-family: "JetBrains Mono", monospace;
-  }
-  
-  .calculator {
-    width: 50%;
-    padding: 40px;
-    background-color: #f2f2f2;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .calculator h1 {
-    margin-bottom: 20px;
-  }
-  
-  .calculator label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-  }
-  
-  .calculator input,
-  .calculator select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 16px;
-  }
-  
-  .calculator button {
-    margin-top: 20px;
-    padding: 12px;
-    width: 100%;
-    background-color: black;
-    color: white;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .result {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .smoke {
-    width: 50%;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .smoke video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  

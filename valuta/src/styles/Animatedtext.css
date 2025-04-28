@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap');
 
+.big-container{}
+
+
+.big-container h2{
+  font-family: "JetBrains Mono", monospace;
+  color: rgb(255, 255, 255);
+  font-size: 60px;
+  margin: auto;
+  margin-top: 100px;
+  width: 80vw;
+  text-align: center;
+  padding-top:40px ;
+  padding-bottom: 40px;
+  
+}
+.big-container p{
+  font-family: "JetBrains Mono", monospace;
+  color: rgb(255, 255, 255);
+  margin: auto;
+  width: 60vw;
+  padding-top:10px ;
+  padding-bottom: 10px;
+}
 .cards-container {
     font-family: "JetBrains Mono", monospace;
     display: flex;
@@ -7,7 +30,7 @@
     justify-content: center;
     gap: 5rem;
     padding: 4rem 2rem;
-    background-color: #000000;
+    background-color:transparent;
   }
   
   .info-card {
