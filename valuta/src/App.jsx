@@ -10,6 +10,7 @@ import "./styles/App.css";
 import Contact from "./Contact";
 import AnimatedTexts from "./Animatedtext";
 import ComingSoon from "./ComingSoon";
+import AdvisorySection from "./AdvisorySection";
 function App() {
 
   const lineRef = useRef(null);
@@ -36,8 +37,8 @@ function App() {
    <AnimatedTexts></AnimatedTexts>
    <CurrencyExchange></CurrencyExchange>
    <ComingSoon></ComingSoon>
+   <AdvisorySection></AdvisorySection>
    <Contact></Contact>
-
    <Gyik></Gyik>
   </>
   )

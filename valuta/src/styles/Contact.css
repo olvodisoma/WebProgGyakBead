@@ -19,8 +19,8 @@
   padding: 0 20px;
 }
 
-.contact-intro h2 {
-  font-size: 2rem;
+.contact-intro h1 {
+  font-size: 3rem;
   margin-bottom: 10px;
   color: black;
 }
@@ -48,7 +48,7 @@
 }
 
 .contact-form h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 10px;
   color: black;
 }
@@ -91,7 +91,7 @@
 /* Jobb oldal: animációs tér */
 .contact-animation {
   flex: 1;
-  height: 400px;
+  height: 500px;
   position: relative;
   overflow: hidden;
   background: white;

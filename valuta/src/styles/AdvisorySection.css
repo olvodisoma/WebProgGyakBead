@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.advisory-container {
+  background-color: white;
+  color: black;
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.advisory-content {
+  width:80vw ;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Bal oldal: szöveg */
+.advisory-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.advisory-text h2 {
+  font-size: 3rem;
+  margin-bottom: 24px;
+  color: black;
+}
+
+.advisory-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.advisory-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.advisory-button:hover {
+  background-color: #333;
+}
+
+/* Jobb oldal: videó */
+.advisory-video {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.video-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: white;
+
+  /* Paint glitch és böngésző fixek */
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+  filter: grayscale(0);
+  clip-path: inset(0.5px 0.5px); /* vág egy vékony sávot a szélekről */
+}
+
+.video-element:focus {
+  outline: none;
+}
+
+/* Mobilbarát */
+@media (max-width: 768px) {
+  .advisory-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .advisory-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .advisory-text p {
+    font-size: 1rem;
+  }
+
+  .video-element {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+}

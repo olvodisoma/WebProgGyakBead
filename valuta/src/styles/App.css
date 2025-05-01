@@ -8,4 +8,7 @@
     transform: rotate(170deg) translateY(-30%);
     transform-origin: top center; /* A vonal a felső középpontból induljon */
 }
+html {
+    scroll-behavior: smooth;
+  }
 
