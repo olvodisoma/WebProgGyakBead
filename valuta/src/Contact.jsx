@@ -49,7 +49,7 @@ const Contact = () => {
         </p>
         <p>
         Cégünk azért dolgozik, hogy a pénzügyi mozgásaid egyszerűbbé és átláthatóbbá váljanak – legyen szó magánszemélyként történő valutaváltásról, céges együttműködésről, vagy technikai támogatásról.
-        Töltsd ki az alábbi kapcsolatfelvételi űrlapot, és csapatunk rövid időn belül válaszol – mert számunkra az átváltás nemcsak számok kérdése, hanem bizalomé is.
+        Tötsd ki az alábbi kapcsolatfelvételi űrlapot, és csapatunk rövid időn belül válaszol – mert számunkra az átváltás nemcsak számok kérdése, hanem bizalomé is.
         </p>
       </div>
 
