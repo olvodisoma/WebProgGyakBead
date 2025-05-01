@@ -1,61 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap');
-.contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 50px;
-    background: black;
-    color: white;
-    border-radius: 10px;
-  }
-  
-  .im h1 {
-    font-size: 2rem;
-    color: #f0f0f0; /* Világosabb fehér */
-    margin-bottom: 10px;
-  }
-  
-  .im p {
-    max-width: 500px;
-    color: #cccccc; /* Halványabb fehér */
-  }
-  
-  .cform {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 300px;
-  }
-  
-  .cform input,
-  .cform textarea {
-    padding: 10px;
-    border: 1px solid #555; /* Halvány szegély */
-    background: #222; /* Sötétszürke háttér */
-    color: white;
-    border-radius: 5px;
-    outline: none;
-  }
-  
-  .cform input::placeholder,
-  .cform textarea::placeholder {
-    color: #888; /* Halvány placeholder szín */
-  }
-  
-  .cbutton {
-    background: #ff6b6b;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .cbutton:hover {
-    transform: scale(1.05);
-    background: #ff8787; /* Világosabb hover szín */
-  }
-  
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+.contact-full-width {
+  width: 100%;
+  background: white;
+  color: black;
+  font-family: "JetBrains Mono", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0;
+}
+
+/* Bevezető szöveg a forma előtt */
+.contact-intro {
+  margin: auto;
+  width: 80vw;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.contact-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.contact-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Tartalomblokk (80vw széles) */
+.contact-limited {
+  width: 80vw;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Bal oldali kapcsolat űrlap */
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-bottom: 1px solid #444;
+  font-size: 1rem;
+  background: transparent;
+  font-family: inherit;
+  color: black;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: black;
+}
+
+.contact-form button {
+  padding: 12px 24px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 12px;
+  align-self: flex-start;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #222;
+}
+
+/* Jobb oldal: animációs tér */
+.contact-animation {
+  flex: 1;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Középső fő valuta szimbólum */
+.center-icon {
+  position: absolute;
+  font-size: 10rem;
+  color: black;
+  font-weight: bold;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Lebegő valutajelek körülötte */
+.floating {
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+  z-index: 0;
+}

@@ -1,55 +1,85 @@
-import { useEffect } from "react";
-import gsap from "gsap";
+import React, { useEffect, useRef, useMemo } from "react";
 import "./styles/Contact.css";
+import gsap from "gsap";
 
-function Contact() {
+const currencySymbols = ['$', '€', '£', '¥', '₿'];
+
+const getRandomSymbol = () =>
+  currencySymbols[Math.floor(Math.random() * currencySymbols.length)];
+
+const Contact = () => {
+  const bgRef = useRef(null);
+
+  // Memorizált szimbólumok újratöltésnél
+  const centerSymbol = useMemo(() => getRandomSymbol(), []);
+  const floatingSymbols = useMemo(
+    () =>
+      Array.from({ length: 12 }, () => ({
+        symbol: getRandomSymbol(),
+        top: 10 + Math.random() * 80,
+        left: 10 + Math.random() * 80,
+      })),
+    []
+  );
+
   useEffect(() => {
-    // Fő konténer belépő animáció
-    gsap.from(".contact", { opacity: 0, y: 50, duration: 1, ease: "power2.out" });
+    const symbols = bgRef.current.querySelectorAll(".floating");
 
-    // Szöveg betűnkénti megjelenése
-    gsap.from(".im h1", { opacity: 0, y: 20, duration: 1.2, ease: "power2.out", delay: 0.2 });
-    gsap.from(".im p", { opacity: 0, y: 20, duration: 1.2, ease: "power2.out", delay: 0.4 });
-
-    // Form mezők animációja egymás után
-    gsap.from(".cform input, .cform textarea", {
-      opacity: 0,
-      x: -50,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power2.out",
-      delay: 0.6
-    });
-
-    // Küldés gomb rugós beúszása
-    gsap.from(".cbutton", { scale: 0, duration: 1.2, ease: "elastic.out(1, 0.5)", delay: 1 });
-
-    // Hover hatás a gombra
-    gsap.to(".cbutton", {
-      scale: 1.05,
-      duration: 0.2,
-      ease: "power1.out",
-      paused: true
+    symbols.forEach((el, i) => {
+      gsap.to(el, {
+        x: "+=" + (Math.random() * 50 - 25),
+        y: "+=" + (Math.random() * 50 - 25),
+        rotation: "+=" + (Math.random() * 20 - 10),
+        opacity: 0.2 + Math.random() * 0.2,
+        duration: 4 + Math.random() * 2, // gyorsabb és folyamatos
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+        delay: i * 0.2,
+      });
     });
   }, []);
 
   return (
-    <div className="contact">
-      <div className="im">
-        <h1>Kérdésed van? Írj nekünk!</h1>
+    <div className="contact-full-width">
+      <div className="contact-intro">
+        <h2>Készen állsz a váltásra?</h2>
         <p>
-          Legyen szó valutaváltásról, árfolyamokról vagy bármi másról, itt vagyunk, hogy segítsünk!
-          Töltsd ki az űrlapot, és mi villámgyorsan válaszolunk!
+        Szükséged van megbízható árfolyaminformációkra, automatikus váltásra vagy egyszerűen csak tanácsra?
+        </p>
+        <p>
+        Cégünk azért dolgozik, hogy a pénzügyi mozgásaid egyszerűbbé és átláthatóbbá váljanak – legyen szó magánszemélyként történő valutaváltásról, céges együttműködésről, vagy technikai támogatásról.
+        Töltsd ki az alábbi kapcsolatfelvételi űrlapot, és csapatunk rövid időn belül válaszol – mert számunkra az átváltás nemcsak számok kérdése, hanem bizalomé is.
         </p>
       </div>
-      <form className="cform">
-        <input className="cname" placeholder="Név" />
-        <input className="cemail" placeholder="Email" />
-        <textarea className="ctextarea" placeholder="Üzenet"></textarea>
-        <button className="cbutton">Küldés</button>
-      </form>
+
+      <div className="contact-limited">
+        <form className="contact-form">
+          <h1>Kapcsolat</h1>
+          <input type="text" placeholder="Neved" required />
+          <input type="email" placeholder="Email címed" required />
+          <textarea placeholder="Üzeneted..." rows="4" required />
+          <button type="submit">Küldés</button>
+        </form>
+
+        <div className="contact-animation" ref={bgRef}>
+          <div className="center-icon">{centerSymbol}</div>
+          {floatingSymbols.map((item, i) => (
+            <div
+              key={i}
+              className="floating"
+              style={{
+                top: `${item.top}%`,
+                left: `${item.left}%`,
+              }}
+            >
+              {item.symbol}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default Contact;

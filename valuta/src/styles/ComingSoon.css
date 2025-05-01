@@ -2,8 +2,7 @@
 .totalcontainer{
     padding-top: 100px;
     background: white;
-    width: 100vw;
-    padding-bottom: 150px;
+    width: 100%;
 }
 .coming-soon-container {
     display: flex;

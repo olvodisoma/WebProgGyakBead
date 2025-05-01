@@ -5,12 +5,13 @@
 
 .faq-container {
    margin-top: 100px;
+  background: white;
   }
   
   /* Cím */
   .faq-title {
-    background: white;
-    color:  black;
+    background: black;
+    color:  white;
     font-family: "JetBrains Mono", monospace;
     font-size: 130px;
     height: 20vh;
@@ -23,7 +24,7 @@
   
   /* Egyetlen GYIK elem */
   .faq-item {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #000000;
     padding: 10px 0;
     width: 80vw;
     margin: auto;
@@ -41,7 +42,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f7f7f7;
+    background: #000000;
+    color: white;
     border: none;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
@@ -49,6 +51,7 @@
   
   .faq-question:hover {
     background: #eaeaea;
+    color: black;
   }
   
   /* Nyíl ikon */
@@ -67,7 +70,7 @@
     opacity: 0;
     padding: 0 16px;
     font-size: 16px;
-    color: white;
+    color: black;
     font-family: "JetBrains Mono", monospace;
     transition: all 0.3s ease-in-out;
   }
