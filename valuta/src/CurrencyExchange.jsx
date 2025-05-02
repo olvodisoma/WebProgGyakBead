@@ -141,7 +141,7 @@ export const CurrencyExchange = () => {
   }, [rates, oldRates]);
 
   return (
-    <div className="currencydiv">
+    <div className="currencydiv" id="currencyexchange">
       <h2>Élő átváltási árfolyamok</h2>
       <div className="extdiv">
         <DataTable className="extabble" columns={columns} data={finalRates} pagination striped />

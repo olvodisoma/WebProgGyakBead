@@ -32,21 +32,22 @@ const AnimatedTexts = () => {
 
   const cards = [
     {
-      title: "Valós idejű árfolyamok",
-      description: "Mindig a legfrissebb piaci adatokat használjuk a pontos váltáshoz.",
+      title: "1. Add meg az összeget",
+      description: "Írd be, hogy mennyi pénzt szeretnél átváltani – azonnal elkezdjük számolni az aktuális árfolyam alapján.",
       image: "/abstract1.png",
     },
     {
-      title: "Gyors tranzakciók",
-      description: "Pénzed néhány másodperc alatt elérhető lesz a kiválasztott valutában.",
+      title: "2. Válaszd ki a valutákat",
+      description: "Állítsd be, hogy milyen pénznemből milyenre szeretnél váltani – például HUF → EUR.",
       image: "/abstract2.png",
     },
     {
-      title: "Biztonságos váltás",
-      description: "Modern biztonsági megoldásokkal védjük adataidat és tranzakcióidat.",
+      title: "3. Nézd meg az eredményt",
+      description: "Az alkalmazás automatikusan kiszámolja, mennyit ér az összeged a célvalutában – mindig friss árfolyamon.",
       image: "/abstract3.png",
     },
   ];
+  
 
   return (
     <div className="big-container">

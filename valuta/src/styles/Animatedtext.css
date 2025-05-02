@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap');
 
-.big-container{}
+.big-container {}
 
-
-.big-container h2{
+.big-container h2 {
   font-family: "JetBrains Mono", monospace;
   color: rgb(255, 255, 255);
   font-size: 60px;
@@ -11,73 +10,121 @@
   margin-top: 100px;
   width: 80vw;
   text-align: center;
-  padding-top:40px ;
+  padding-top: 40px;
   padding-bottom: 40px;
-  
 }
-.big-container p{
+
+.big-container p {
   font-family: "JetBrains Mono", monospace;
   color: rgb(255, 255, 255);
   margin: auto;
   width: 60vw;
-  padding-top:10px ;
+  padding-top: 10px;
   padding-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
 }
+
 .cards-container {
-    font-family: "JetBrains Mono", monospace;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5rem;
-    padding: 4rem 2rem;
-    background-color:transparent;
+  font-family: "JetBrains Mono", monospace;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+  padding: 4rem 2rem;
+  background-color: transparent;
+}
+
+.info-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* sötét réteg a háttér fölött */
+  backdrop-filter: blur(2px);
+}
+
+.info-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.15);
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+.card-description {
+  font-size: 1rem;
+  color: #cccccc;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  text-align: center;
+}
+
+/* 🔻 Mobilbarát nézet */
+@media (max-width: 768px) {
+  .big-container h2 {
+    font-size: 30px;
+    width: 90vw;
+    padding: 20px 0;
   }
-  
-  .info-card {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 12px;
-    width: 300px;
-    height: 400px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
+
+  .big-container p {
+    width: 90vw;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .cards-container {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+    gap: 2rem;
+    padding: 2rem 1rem;
   }
-  
-  .info-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5); /* sötét réteg a háttérkép fölött */
-    backdrop-filter: blur(2px);
+
+  .info-card {
+    width: 90vw;
+    height: 300px;
   }
-  
-  .card-content {
-    position: relative;
-    z-index: 1;
-    padding: 1rem;
-  }
-  
-  .info-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.15);
-  }
-  
+
   .card-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #f0f0f0;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
   }
-  
+
   .card-description {
-    font-size: 1rem;
-    color: #cccccc;
+    font-size: 0.9rem;
   }
-  
+}

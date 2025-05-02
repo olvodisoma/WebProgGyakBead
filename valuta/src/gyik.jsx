@@ -48,7 +48,7 @@ const Gyik = () => {
 ];
 
   return (
-    <div className="faq-container">
+    <div className="faq-container" id="gyik">
       <h2 className="faq-title">GYIK</h2>
       {faqs.map((faq, index) => (
         <FAQItem key={index} question={faq.question} answer={faq.answer} />

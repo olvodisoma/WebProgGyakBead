@@ -25,7 +25,7 @@ const CurrencyCalculator = () => {
 
   return (
 
-    <div className="calculator-background">
+    <div className="calculator-background" id="curencycalculator">
       <div className="calculator-card">
         <div className="input-section">
           <label>Összeg</label>

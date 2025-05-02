@@ -1,18 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap');
-html{background: black;}
-.navbar{
+
+html {
+  background: black;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  color: white;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 100;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 40px;
+}
+
+.menu-item {
+  font-family: "JetBrains Mono", monospace;
+  text-decoration: none;
+  color: white;
+  margin: 20px;
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: #ff0000;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* HAMBURGER alap */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+  position: absolute;
+  right: 40px;
+  top: 35px;
+  z-index: 101;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* --- Mobilnézet --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo{
+    display: none;
+  }
+
+  .hamburger {
     display: flex;
-    justify-content: space-between;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: white;
+    padding: 20px 0;
+    width: 100%;
     align-items: center;
-    padding: 30px 40px;
-    color: white;
-}
-.logo{
-    width: 40px;
-}
-.menu-item{
-    font-family: "JetBrains Mono", monospace;
-    text-decoration: none;
-    color: white;
-    margin: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-menu.visible {
+    display: flex;
+  }
+
+  .menu-item {
+    margin: 12px 0;
+    font-size: 18px;
+    color: black;
+  }
+
+  .menu-item:hover {
+    color: #ff0000;
+  }
 }
