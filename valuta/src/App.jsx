@@ -12,25 +12,8 @@ import AnimatedTexts from "./Animatedtext";
 import ComingSoon from "./ComingSoon";
 import AdvisorySection from "./AdvisorySection";
 function App() {
-
-  const lineRef = useRef(null);
-
-  useGSAP(() => {
-    gsap.to(lineRef.current, {
-        scaleX: 1.2,   // Pulzáló vastagság
-        opacity: 0.5,  // Pulzáló áttetszőség
-        transformOrigin: "top center",
-        duration: 1,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut"
-    });
-}, []);
-
-
   return (
   <>
-   <div ref={lineRef} className="line"></div>
    <Navbar></Navbar>
    <Mainpg></Mainpg>
    <CurrencyConverter></CurrencyConverter>

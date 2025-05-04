@@ -91,7 +91,7 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
-    <div className="contact-full-width" id="contact">
+    <div className="contact-full-width">
       <div className="contact-intro">
         <h1>Készen állsz a váltásra?</h1>
         <p>
@@ -103,54 +103,64 @@ const Contact = () => {
         </p>
       </div>
 
-      <div className="contact-limited">
+      <div className="contact-limited" id="contact">
         <form className="contact-form" onSubmit={handleSubmit} ref={formRef}>
           <h1>Kapcsolat</h1>
 
+          <label htmlFor="name">Neved</label>
           <input
             type="text"
+            id="name"
             name="name"
-            placeholder="Neved"
+            autoComplete="name"
             value={formData.name}
             onChange={handleChange}
             required
           />
           {errors.name && <p className="error">{errors.name}</p>}
 
+          <label htmlFor="email">Email címed</label>
           <input
             type="email"
+            id="email"
             name="email"
-            placeholder="Email címed"
+            autoComplete="email"
             value={formData.email}
             onChange={handleChange}
             required
           />
           {errors.email && <p className="error">{errors.email}</p>}
 
+          <label htmlFor="phone">Telefonszámod</label>
           <input
             type="text"
+            id="phone"
             name="phone"
-            placeholder="Telefonszámod"
+            autoComplete="tel"
             value={formData.phone}
             onChange={handleChange}
             required
           />
           {errors.phone && <p className="error">{errors.phone}</p>}
 
+          <label htmlFor="subject">Tárgy</label>
           <input
             type="text"
+            id="subject"
             name="subject"
-            placeholder="Tárgy"
+            autoComplete="off"
             value={formData.subject}
             onChange={handleChange}
             required
           />
           {errors.subject && <p className="error">{errors.subject}</p>}
 
+          <label htmlFor="message">Üzeneted</label>
           <textarea
+            id="message"
             name="message"
-            placeholder="Üzeneted..."
             rows="4"
+            autoComplete="off"
             value={formData.message}
             onChange={handleChange}
             required

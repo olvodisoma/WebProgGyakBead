@@ -6,11 +6,12 @@ html, body {
   overflow-x: hidden;
   box-sizing: border-box;
 }
+
 canvas {
-    width: 100% !important;
-    height: 500px !important;
-    max-height: 70vh;
-  }
+  width: 100% !important;
+  height: 500px !important;
+  max-height: 70vh;
+}
 
 section {
   display: flex;
@@ -22,8 +23,9 @@ section {
   margin: 0 auto;
   padding: 40px 20px;
   height: auto;
-  flex-wrap: wrap; /* oszlopos váltás ha kell */
+  flex-wrap: wrap;
   gap: 40px;
+  box-sizing: border-box;
 }
 
 .leftdiv {
@@ -34,6 +36,7 @@ section {
   justify-content: center;
   align-items: flex-start;
   padding-right: 20px;
+  box-sizing: border-box;
 }
 
 .rightdiv {
@@ -42,25 +45,25 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 h1 {
-    font-family: "JetBrains Mono", monospace;
-    font-size: clamp(20px, 5vw, 50px);
-    color: white;
-    margin: 0;
-    text-align: center;
-    white-space: normal;
-    word-break: break-word;
-    padding-inline: 20px;
-    line-height: 1.4;
-    height: 3.5em;    
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(20px, 5vw, 50px);
+  color: white;
+  margin: 0;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  padding-inline: 20px;
+  line-height: 1.4;
+  height: 3.5em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 h2 {
   font-family: "JetBrains Mono", monospace;
@@ -79,7 +82,8 @@ h2 {
   section {
     flex-direction: column;
     padding: 20px;
-    gap: 20px; /* kisebb hézag */
+    gap: 20px;
+    width: 100%;
   }
 
   .leftdiv, .rightdiv {
@@ -87,18 +91,19 @@ h2 {
     padding: 0;
     align-items: center;
     text-align: center;
+    box-sizing: border-box;
   }
 
   h1, h2 {
     text-align: center;
-    padding-inline: 20px; /* margó, hogy ne lógjon ki */
+    padding-inline: 10px;
   }
 
   h1 {
     font-size: clamp(18px, 6vw, 32px);
     height: 4em;
   }
-  
+
   h2 {
     font-size: clamp(16px, 4.5vw, 22px);
     margin-bottom: 10px;

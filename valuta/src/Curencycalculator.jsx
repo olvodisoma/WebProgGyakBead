@@ -16,28 +16,35 @@ const CurrencyCalculator = () => {
   }, []);
 
   const convertCurrency = () => {
-    if (!rates[fromCurrency] || !rates[toCurrency]) {
-      return 0;
-    }
+    if (!rates[fromCurrency] || !rates[toCurrency]) return 0;
     const rate = rates[toCurrency] / rates[fromCurrency];
     return (amount * rate).toFixed(5);
   };
 
   return (
-
     <div className="calculator-background" id="curencycalculator">
       <div className="calculator-card">
+
+        {/* Összeg */}
         <div className="input-section">
-          <label>Összeg</label>
+          <label htmlFor="amount">Összeg</label>
           <div className="input-with-currency">
             <input
               type="number"
+              id="amount"
+              name="amount"
+              autoComplete="off"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
+              required
             />
+            <label htmlFor="fromCurrency" className="sr-only">Forrás pénznem</label>
             <select
+              id="fromCurrency"
+              name="fromCurrency"
               value={fromCurrency}
               onChange={(e) => setFromCurrency(e.target.value)}
+              required
             >
               {Object.keys(rates).map((currency) => (
                 <option key={currency} value={currency}>
@@ -48,17 +55,24 @@ const CurrencyCalculator = () => {
           </div>
         </div>
 
+        {/* Átváltás eredménye */}
         <div className="input-section">
-          <label>Átváltva erre</label>
+          <label htmlFor="converted">Átváltva erre</label>
           <div className="input-with-currency">
             <input
               type="text"
+              id="converted"
+              name="converted"
               value={convertCurrency()}
               readOnly
             />
+            <label htmlFor="toCurrency" className="sr-only">Cél pénznem</label>
             <select
+              id="toCurrency"
+              name="toCurrency"
               value={toCurrency}
               onChange={(e) => setToCurrency(e.target.value)}
+              required
             >
               {Object.keys(rates).map((currency) => (
                 <option key={currency} value={currency}>
@@ -70,10 +84,11 @@ const CurrencyCalculator = () => {
         </div>
 
         <div className="result-info">
-          1 {fromCurrency} = {rates[toCurrency] && rates[fromCurrency] 
+          1 {fromCurrency} = {rates[toCurrency] && rates[fromCurrency]
             ? (rates[toCurrency] / rates[fromCurrency]).toFixed(5)
             : "0.00000"} {toCurrency}
         </div>
+
       </div>
     </div>
   );

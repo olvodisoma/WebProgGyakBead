@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .contact-full-width {
   width: 100%;
   background: white;
@@ -8,49 +14,57 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 0;
+  padding: 60px 0 60px 0;
+  margin-top: -1px; /* eltünteti a felső csíkot */
+  overflow-x: hidden;
 }
 
-/* Bevezető szöveg a forma előtt */
+.contact-full-width * {
+  color: black; /* minden szöveg fekete */
+}
+
+/* Intro szövegblokk */
 .contact-intro {
-  margin: auto;
   width: 80vw;
+  max-width: 1200px;
   margin-bottom: 60px;
   padding: 0 20px;
 }
 
 .contact-intro h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  color: black;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .contact-intro p {
   font-size: 1.1rem;
   line-height: 1.6;
+  margin-bottom: 10px;
 }
 
-/* Tartalomblokk (80vw széles) */
+/* Fő tartalmi rész */
 .contact-limited {
   width: 80vw;
   max-width: 1400px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 60px;
+  flex-wrap: wrap;
 }
 
-/* Bal oldali kapcsolat űrlap */
+/* Űrlap */
 .contact-form {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 300px;
 }
 
 .contact-form h1 {
-  font-size: 3rem;
+  font-size: 2.2rem;
   margin-bottom: 10px;
-  color: black;
 }
 
 .contact-form input,
@@ -59,10 +73,10 @@
   padding: 12px;
   border: none;
   border-bottom: 1px solid #444;
-  font-size: 1rem;
   background: transparent;
+  font-size: 1rem;
   font-family: inherit;
-  color: black;
+  resize: vertical;
 }
 
 .contact-form input:focus,
@@ -88,30 +102,42 @@
   background: #222;
 }
 
-/* Jobb oldal: animációs tér */
+.error {
+  font-size: 0.9rem;
+  color: red;
+}
+
+.status {
+  font-size: 0.95rem;
+  color: green;
+  margin-top: 10px;
+}
+
+/* Animációs tér */
 .contact-animation {
   flex: 1;
-  height: 500px;
+  min-width: 300px;
+  min-height: 450px;
+  height: auto;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 80px;
 }
 
-/* Középső fő valuta szimbólum */
 .center-icon {
   position: absolute;
   font-size: 10rem;
-  color: black;
   font-weight: bold;
+  color: black;
   z-index: 1;
   pointer-events: none;
   user-select: none;
 }
 
-/* Lebegő valutajelek körülötte */
 .floating {
   position: absolute;
   font-size: 2.5rem;
@@ -119,6 +145,56 @@
   color: rgba(0, 0, 0, 0.15);
   pointer-events: none;
   user-select: none;
-  will-change: transform, opacity;
   z-index: 0;
+  will-change: transform, opacity;
+}
+
+/* Mobil nézet */
+@media (max-width: 768px) {
+  .contact-intro {
+    width: 90vw;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .contact-intro h1 {
+    font-size: 2rem;
+  }
+
+  .contact-intro p {
+    font-size: 1rem;
+  }
+
+  .contact-limited {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 90vw;
+  }
+
+  .contact-form {
+    align-items: center;
+  }
+
+  .contact-form h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .contact-form button {
+    align-self: center;
+  }
+
+  .contact-animation {
+    min-height: 300px;
+    margin-top: 0px;
+  }
+
+  .center-icon {
+    font-size: 6rem;
+  }
+
+  .floating {
+    font-size: 2rem;
+  }
 }

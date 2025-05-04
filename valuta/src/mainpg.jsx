@@ -54,7 +54,7 @@ function Mainpg() {
                 <h1 ref={textRef}></h1>
             </div>
             <div className="rightdiv">
-                <Canvas shadows camera={{ position: [0, 0, 3] }}>
+                <Canvas shadows camera={{ position: [0, 0, 2.5] }}>
                     <ambientLight intensity={5.6} />
                     <directionalLight position={[3, 3, 3]} intensity={5.0} castShadow />
                     <directionalLight position={[-3, -3, 3]} intensity={4.8} castShadow />

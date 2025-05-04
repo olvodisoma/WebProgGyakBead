@@ -10,7 +10,7 @@ const ComingSoon = () => {
     <div className="coming-soon-container">
       <div className="model-section">
         <Canvas
-          camera={{ position: [0, 0, 3] }}
+          camera={{ position: [0, 0, 2.7] }}
           gl={{ alpha: true }}
           style={{ background: "transparent" }}
         >
@@ -43,8 +43,7 @@ const ComingSoon = () => {
         <p>Új mobilalkalmazásunk segítségével egyszerűen és gyorsan válthatod át pénzed több mint 140 különböző pénznem között.</p>
         <p>Valós idejű árfolyamokkal, átlátható kalkulációkkal és könnyen kezelhető felülettel támogatjuk a mindennapi pénzügyi műveleteidet.</p>
         <p>Az alkalmazás biztonságos kapcsolatot, gyors tranzakciókezelést és folyamatos frissítéseket kínál, hogy mindig a legjobb árfolyamokat használhasd.</p>
-        <p>Tökéletes megoldás utazóknak, üzletembereknek és mindazoknak, akiknek fontos a gyors és pontos pénzváltás.</p>
-      </div>
+       </div>
     </div>
     </div>
   );
